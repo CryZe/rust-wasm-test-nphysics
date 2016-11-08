@@ -15,12 +15,16 @@
         width: 40px;
         height: 40px;
         position: absolute;
-        background-color: green;
+        background-image: -webkit-radial-gradient(10px 10px, circle cover, hsla(125, 60%, 50%, 1), hsla(125, 70%, 15%, 1));
+        background-image: radial-gradient(at 10px 10px, hsla(125, 60%, 50%, 1) 0%, hsla(125, 70%, 15%, 1) 100%);
       }
     </style>
     <script async type="text/javascript" src="physics-test.js"></script>
   </head>
   <body>
-    <button>Spawn</button>
+    <p>
+      <button id="spawn">Spawn</button>
+      <button id="download">Download</button>
+    </p>
   </body>
 </html>

@@ -80,12 +80,6 @@ impl<'a> fmt::Debug for HtmlNode<'a> {
     }
 }
 
-impl<'a> Drop for HtmlNode<'a> {
-    fn drop(&mut self) {
-        println!("dropping HTML NODE {:?}", self.id);
-    }
-}
-
 pub struct JSRef<'a> {
     ptr: *const HtmlNode<'a>,
 }
@@ -151,6 +145,12 @@ impl<'a> HtmlNode<'a> {
     pub fn focus(&self) {
         js! { (self.id) b"\
             WEBPLATFORM.rs_refs[$0].focus();\
+        \0" };
+    }
+
+    pub fn click(&self) {
+        js! { (self.id) b"\
+            WEBPLATFORM.rs_refs[$0].click();\
         \0" };
     }
 
@@ -283,6 +283,12 @@ impl<'a> HtmlNode<'a> {
     pub fn append(&self, s: &HtmlNode) {
         js! { (self.id, s.id) b"\
             WEBPLATFORM.rs_refs[$0].appendChild(WEBPLATFORM.rs_refs[$1]);\
+        \0" };
+    }
+
+    pub fn remove(&self, s: &HtmlNode) {
+        js! { (self.id, s.id) b"\
+            WEBPLATFORM.rs_refs[$0].removeChild(WEBPLATFORM.rs_refs[$1]);\
         \0" };
     }
 

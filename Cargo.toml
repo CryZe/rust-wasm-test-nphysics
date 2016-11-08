@@ -11,6 +11,9 @@ webplatform = { path = "rust-webplatform" }
 libc = "*"
 nphysics2d = "0.5.0"
 ncollide = "0.10.0"
+pace-files = { path = "geometry/libs/pace-files" }
+filling = { path = "geometry/libs/filling" }
+base64 = "0.2.1"
 
 [replace]
 "num_cpus:1.1.0" = { git = 'https://github.com/seanmonstar/num_cpus' }
