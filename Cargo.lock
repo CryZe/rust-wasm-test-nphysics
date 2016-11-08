@@ -5,7 +5,7 @@ dependencies = [
  "libc 0.2.17 (registry+https://github.com/rust-lang/crates.io-index)",
  "ncollide 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "nphysics2d 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "webplatform 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "webplatform 0.4.2",
 ]
 
 [[package]]
@@ -202,7 +202,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "webplatform"
 version = "0.4.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "libc 0.2.17 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -227,4 +226,3 @@ dependencies = [
 "checksum num-traits 0.1.36 (registry+https://github.com/rust-lang/crates.io-index)" = "a16a42856a256b39c6d3484f097f6713e14feacd9bfb02290917904fae46c81c"
 "checksum rand 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)" = "2791d88c6defac799c3f20d74f094ca33b9332612d9aef9078519c82e4fe04a5"
 "checksum rustc-serialize 0.3.19 (registry+https://github.com/rust-lang/crates.io-index)" = "6159e4e6e559c81bd706afe9c8fd68f547d3e851ce12e76b1de7914bab61691b"
-"checksum webplatform 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "dceedd9c1de7153116da0e61a21365a2b74f603693bc565fad16c05aa79046b7"

@@ -7,7 +7,7 @@ authors = ["Christopher Serr <christopher.serr@gmail.com>"]
 lto = true
 
 [dependencies]
-webplatform = "0.4.2"
+webplatform = { path = "rust-webplatform" }
 libc = "*"
 nphysics2d = "0.5.0"
 ncollide = "0.10.0"

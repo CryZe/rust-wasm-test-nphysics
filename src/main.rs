@@ -56,8 +56,7 @@ fn run(document: &Document, world: &mut World<f32>, balls: &[RigidBodyHandle<f32
     for (id, ball) in balls.iter().enumerate() {
         let node = document.element_query(&format!("#ball{:05}", id)).unwrap();
         let pos = ball.borrow().position().translation;
-        node.prop_set_str("style",
-                          &format!("left: {}px; top: {}px;", pos.x - 20.0, 600.0 - pos.y - 20.0));
+        node.set_style(&format!("left: {}px; top: {}px;", pos.x - 20.0, 600.0 - pos.y - 20.0));
     }
 }
 
