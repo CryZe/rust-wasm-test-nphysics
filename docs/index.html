@@ -3,12 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Emscripten-Generated Code</title>
+    <title>Balls</title>
     <style>
       body {
-        font-family: arial;
-        margin: 0;
-        padding: none;
+        margin-top: 0px;
       }
       .ball {
         border-radius: 50%;
@@ -18,10 +16,21 @@
         background-image: -webkit-radial-gradient(10px 10px, circle cover, hsla(125, 60%, 50%, 1), hsla(125, 70%, 15%, 1));
         background-image: radial-gradient(at 10px 10px, hsla(125, 60%, 50%, 1) 0%, hsla(125, 70%, 15%, 1) 100%);
       }
+      .domain {
+        background-color: hsl(125, 5%, 95%);
+        width: 600px;
+        height: 600px;
+      }
+      button {
+        width: 100px;
+        height: 50px;
+        margin-left: 10px;
+      }
     </style>
     <script async type="text/javascript" src="physics-test.js"></script>
   </head>
   <body>
+    <div class="domain"></div>
     <p>
       <button id="spawn">Spawn</button>
       <button id="download">Download</button>

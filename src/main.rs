@@ -20,7 +20,7 @@ use filling::{draw, blend};
 
 mod interval;
 
-fn add_ball(body: &HtmlNode,
+fn add_ball(node: &HtmlNode,
             balls: &mut Vec<RigidBodyHandle<f32>>,
             world: &mut World<f32>,
             x: f32,
@@ -33,7 +33,7 @@ fn add_ball(body: &HtmlNode,
     let id = balls.len();
     balls.push(handle);
 
-    body.html_append(&format!(r#"<div id="ball{:05}" class="ball" style="visibility: hidden;" />"#,
+    node.html_append(&format!(r#"<div id="ball{:05}" class="ball" style="visibility: hidden;" />"#,
                               id));
 }
 
@@ -104,7 +104,7 @@ fn download(document: &Document, name: &str, buf: &[u8]) {
 
 fn main() {
     let document = webplatform::init();
-    let body = document.element_query("body").unwrap();
+    let domain = document.element_query(".domain").unwrap();
     let btn_spawn = document.element_query("#spawn").unwrap();
     let btn_download = document.element_query("#download").unwrap();
 
@@ -112,9 +112,9 @@ fn main() {
 
     let mut world = create_world();
 
-    add_ball(&body, &mut balls, &mut world, 101.0, 350.0);
-    add_ball(&body, &mut balls, &mut world, 102.0, 500.0);
-    add_ball(&body, &mut balls, &mut world, 100.0, 550.0);
+    add_ball(&domain, &mut balls, &mut world, 101.0, 350.0);
+    add_ball(&domain, &mut balls, &mut world, 102.0, 500.0);
+    add_ball(&domain, &mut balls, &mut world, 100.0, 550.0);
 
     let balls = Rc::new(RefCell::new(balls));
     let world = Rc::new(RefCell::new(world));
@@ -133,7 +133,7 @@ fn main() {
     {
         let balls = balls.clone();
         btn_spawn.on("click", move |_| {
-            add_ball(&body,
+            add_ball(&domain,
                      &mut balls.borrow_mut(),
                      &mut world.borrow_mut(),
                      300.0,
